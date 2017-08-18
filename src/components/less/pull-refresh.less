@@ -1,0 +1,84 @@
+.yo-scroll {
+    font-size: 14px;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    bottom: 2rem;
+    left: 0;
+    overflow: auto;
+    z-index: 100;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: #F7F7F7;
+    .inner {
+        position: absolute;
+        top: -5rem;
+        width: 100%;
+        height: auto;
+        transition-duration: 300ms;
+        .pull-refresh {
+            position: relative;
+            left: 0;
+            top: 1rem;
+            width: 100%;
+            height: 5rem;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .load-more {
+            height: 2rem;
+            line-height: 2rem;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: none;
+            background-color: #F7F7F7;
+        }
+        .nullData {
+            //暂无更多数据样式
+            font-size: 16px;
+            color: #999999;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            background-color: #F7F7F7;
+        }
+        .down-tip,
+        .refresh-tip,
+        .up-tip {
+            display: none;
+        }
+        .up-tip:before,
+        .refresh-tip:before {
+            content: '';
+            display: inline-block;
+            width: 160px;
+            height: 90px;
+            background-size: 70% !important;
+            position: absolute;
+            top: 0;
+            left: 2%;
+        }
+        .up-tip:before {
+            background: url("../img/down-logo.png") no-repeat center;
+        }
+        .refresh-tip:before {
+            background: url("../img/refresh-logo.gif") no-repeat center;
+        }
+    }
+}
+.yo-scroll.touch .inner {
+    transition-duration: 0;
+}
+.yo-scroll.down .down-tip {
+    display: block;
+}
+.yo-scroll.up .up-tip {
+    display: block;
+}
+.yo-scroll.refresh .refresh-tip {
+    display: block;
+}
